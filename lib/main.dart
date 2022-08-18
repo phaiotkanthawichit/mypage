@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 void main() {
+
+ Intl.defaultLocal = "th";
+ 
   runApp(App());
 }
 
@@ -28,6 +31,8 @@ class MainPage extends StatefulWidget {
 class MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
+    var now = DateTime.now();
+
     return Scaffold(
         appBar: AppBar(
           title: Text('Flutter main Page 2.0ึ8'),
@@ -42,11 +47,11 @@ class MainPageState extends State<MainPage> {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
                     Text(
-                      '01:03',
-                      style: TextStyle(fontSize: 60),
+                      '${now.hour} :  ${now.minute}  : ${now.second}',
+                      style: TextStyle(fontSize: 30),
                     ),
                     Text(
-                      'วันอาทิตย์ 14 มิถุนายน พศ ๒๕๐๗',
+                      ' ${now.day} ${now.month} ${now.year}',
                       style: TextStyle(fontSize: 23.1),
                     ),
                     Text(
